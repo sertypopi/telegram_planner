@@ -1,0 +1,6 @@
+AddDefaultCharset UTF-8
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^id=123$ [NC]
+RewriteRule ^period/$ http://localhost:8888/planner/delete.php? [L,R=301]

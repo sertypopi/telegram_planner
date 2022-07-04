@@ -1,0 +1,23 @@
+body {background-color: #CACD6E!important}
+
+
+.container {
+	margin-top: 30px;
+	widh: 35%!important;
+	margin-right: 60px;
+	margin-left: 60px;
+
+}
+
+form {
+	background-color: #EADECD;
+	border: 2px solid #425051;
+	border-radius: 10px;
+	padding: 30px 30px;
+}
+
+#task_input {
+	width: 60%;
+	float: left;
+	margin-right: 5%;
+}
