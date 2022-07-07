@@ -1,3 +1,7 @@
+<?php
+
+  require_once 'configDB.php';
+  ?>
 
 <!DOCTYPE html>
 <html>
@@ -6,8 +10,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Задачи</title>
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
 </head>
 <body>
 	<div class="container">
@@ -17,17 +23,30 @@
 	<button type='submit' name="send_task" class="btn btn-success">Отправить задачу</button>
 </form>
   <?php
-  require 'configDB.php';
+  //require_once 'configDB.php';
 
-  echo '<ul>';
+  echo '<div class="column">';
 
+  
   $query = $pdo->query('SELECT * FROM `task_process` order by `id` DESC');
   while($row = $query->fetch(PDO::FETCH_OBJ)) {
+
+  	echo '<table class="table table-sm">';
+foreach($row as $v=>$k) {
+        echo '<th scope="row">'.$v.'</th><tbody><td class="table-success">'.$k.'</tbody></td>';
+        echo '<form action="/delete.php?id='.$k->id.'" method="get">
+
+	<button type="delete" name="delete" class="btn btn-success">Удалить</button>
+</form>';
+    }
+echo '</table>';
   	
-  	echo '<li><b>'.$row->task.'</b><a href="/delete.php?id='.$row->id.'"><button>Удалить</button></a></li>';
+  	echo '<div class="row justify-content-center"><b>'.$row->task.'</b><a href="/delete.php?id='.$row->id.'"><button>Удалить</button></a></div>';
       }
-  echo '</ul>';
+  echo '</div>';
+
   ?>
+ 
   </div>
 </body>
 </html>
