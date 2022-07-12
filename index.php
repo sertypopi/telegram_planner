@@ -2,6 +2,7 @@
 
   require 'configDB.php';
   require 'tasks.php';
+  
   ?>
 
 <!DOCTYPE html>
@@ -32,9 +33,10 @@
   <table class="table table-success table-hover">
   		<tr>
    	<th>задача</th>
-   	<th>время</th>
+   	<th>начало</th>
    	<th>действия</th>
-   	</tr>
+   	<th>завершение</th>   	
+</tr>
   <?php
 
 
@@ -43,31 +45,29 @@
    foreach($data as $row) {
    	$id = $row['id'];
    	$task = $row['task'];
-   	$time = $row['time'];
+   	$time = $row['time_start'];
    	
    	?>
 
    	<tr>
    	<td><?php echo $task ?></td>
-   	</td>
-   	<td><?php echo $time?></td>
+   	
+   	<td><?php echo $time ?></td>
+
+   	<td><button class="btn btn-warning"><a href='delete.php?id=<?php echo $id;?>' style="text-decoration:none; color:black;" rel="nofollow">Удалить</a></button></td>
 
    	</tr>
-   	
-<?php
-   	 }
-   	?>
 
-
-   	
-    
-
-	
-
-     
-
+  
+   	 
+    <?php
+}
  
+
+?>
 </table>
 </div>
+   
+    
 </body>
 </html>
