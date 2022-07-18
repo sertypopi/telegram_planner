@@ -10,7 +10,7 @@ var_dump($_POST);
       exit();
     }
 
-    $status = 'в очереди';
+    $status_null = 'в очереди';
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
@@ -21,7 +21,7 @@ var_dump($_POST);
     $sql = "INSERT INTO task_process(task, status) VALUES(:task, :status)";
     $query = $pdo->prepare($sql);
     print_r($query);
-    $query->execute(['task'=> $task, 'status'=> $status]);
+    $query->execute(['task'=> $task, 'status'=> $status_null]);
 
 
 
