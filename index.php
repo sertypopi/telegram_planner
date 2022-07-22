@@ -47,8 +47,11 @@ ini_set('display_errors', 1);
 
     <span class="input-group-text">задача и её статус</span>
 
+    <input type="hidden" name="id" value="<?php echo $id?>">
+
     <input name="task_update" type="text" aria-label="task"  value="<?php echo $task;?>">
-    <input name="status" type="text" aria-label="status" value="<?php echo $status;?>">
+    <input name="status" type="text" aria-label="status" value="<?php echo $status?>">
+
 
     <button class="btn btn-info" type='submit'> изменить</button>
     
