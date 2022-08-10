@@ -1,8 +1,8 @@
 <?php
 
-  require 'configDB.php';
+  require '/Applications/MAMP/htdocs/planner/database/configDB.php';
 
-  require 'tasks.php';
+  require '/Applications/MAMP/htdocs/planner/database/tasks.php';
   error_reporting(E_ALL);
 ini_set('display_errors', 1);
   
@@ -24,7 +24,7 @@ ini_set('display_errors', 1);
   <body>
 	<div class="container">
 
-<form action="/planner/add.php" method="post">
+<form action="/planner/task_update/add.php" method="post">
 	<input type="text" name="task" id="task" placeholder="Добавить задачу" class="form_control">
 	<button type='submit' name="send_task" class="btn btn-success">Отправить задачу</button>
 

@@ -1,5 +1,5 @@
 <?php 
-require 'configDB.php';
+require '/Applications/MAMP/htdocs/planner/database/configDB.php';
 ?>
 
 <?php

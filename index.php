@@ -1,8 +1,8 @@
 <?php
 
-  require 'configDB.php';
-  require 'tasks.php';
-  require 'header.php';
+  require '/Applications/MAMP/htdocs/planner/database/tasks.php';
+  require '/Applications/MAMP/htdocs/planner/database/tasks.php';
+  require '/Applications/MAMP/htdocs/planner/header.php';
 
  error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -40,10 +40,10 @@ ini_set('display_errors', 1);
    	
    	<td><?php echo $time; ?></td>
 
-   	<td><button class="btn btn-warning"><a href='delete.php?id=<?php echo $id;?>' style="text-decoration:none; color:black;" rel="nofollow">Удалить</a></button></td>
+   	<td><button class="btn btn-warning"><a href='task_update/delete.php?id=<?php echo $id;?>' style="text-decoration:none; color:black;" rel="nofollow">Удалить</a></button></td>
 
    	<td><div class="input-group input-group-sm mb-3">
-    <form action="/planner/update.php" method="post"> 
+    <form action="/planner/task_update/update.php" method="post"> 
 
     <span class="input-group-text">задача и её статус</span>
 
