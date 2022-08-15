@@ -1,7 +1,7 @@
 <?php
 
-  require '/Applications/MAMP/htdocs/planner/database/tasks.php';
-  require '/Applications/MAMP/htdocs/planner/database/tasks.php';
+  require '/Applications/MAMP/htdocs/planner/require_tasks.php';
+
   require '/Applications/MAMP/htdocs/planner/header.php';
 
  error_reporting(E_ALL);

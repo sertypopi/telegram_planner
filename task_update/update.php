@@ -1,5 +1,5 @@
 <?php
-   require '/Applications/MAMP/htdocs/planner/database/configDB.php';
+   require '/Applications/MAMP/htdocs/planner/require_tasks.php';
    error_reporting(E_ALL);
    ini_set('display_errors', 1);
 
